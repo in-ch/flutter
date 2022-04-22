@@ -26,3 +26,4 @@
     4) Parent widget을 widget container라고 부르기도 함. 
     ex) MyApp - MaterialApp - MyHomePage - Scaffold - 1) AppBar - text 2) Center - Column - 1) Image 2) TextField .... 등 등 트리 구조 
 
+a
