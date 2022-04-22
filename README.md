@@ -26,4 +26,10 @@
     4) Parent widget을 widget container라고 부르기도 함. 
     ex) MyApp - MaterialApp - MyHomePage - Scaffold - 1) AppBar - text 2) Center - Column - 1) Image 2) TextField .... 등 등 트리 구조 
 
-a
+#플러터 프로젝트 폴더와 기본 코드 이해하기 1 
+
+- pubspec.yaml : 프로젝트의 메타 데이터를 정리하는 것 (사용 환경, 다트 버전, 버전 등 등)
+- test 폴더 : 각종 dart 관련 파일을 작성
+- lib 폴더 : 99%를 여기서 작업함. 
+- import 'package:flutter/material.dart`;를 무조건 상단에 써야 flutter 앱을 만들 수 있음.'
+-  runApp()은 무조건 Widget을 arg를 가져야 함. 
