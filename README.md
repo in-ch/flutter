@@ -33,3 +33,8 @@
 - lib 폴더 : 99%를 여기서 작업함. 
 - import 'package:flutter/material.dart`;를 무조건 상단에 써야 flutter 앱을 만들 수 있음.'
 -  runApp()은 무조건 Widget을 arg를 가져야 함. 
+
+#플러터 프로젝트 폴더와 기본 코드 이해하기 2
+
+- MaterialApp의 ThemeData()는 앱의 기본적인 테마를 지정할 수 있다. 
+- MaterialApp의 home은 앱이 정상적으로 실행되었을 때 가장 먼저 화면에 보여주는 경로이다.
