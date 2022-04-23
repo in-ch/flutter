@@ -49,3 +49,9 @@
 - mainAxisAlignment.center -> 센터로 (세로축으로만)
 - Padding:(padding: EdgeInsets.fromLTRB(left, top, right, bottom)) -> 패딩 줄 수 있음.
 - Center -> 센터로 (가로축만)
+
+#플러터 캐릭터 페이지 디자인2 : 실전 코딩
+
+- crossAxisAlignment: CrossAxisAlignment.start -> 텍스트를 왼쪽 정렬
+- SizedBox() : Margin Box
+- Text 뒤에 2번째 arg로 style를 지정할 수 있음. 
