@@ -55,3 +55,11 @@
 - crossAxisAlignment: CrossAxisAlignment.start -> 텍스트를 왼쪽 정렬
 - SizedBox() : Margin Box
 - Text 뒤에 2번째 arg로 style를 지정할 수 있음. 
+
+#플러터 캐릭터 페이지 디자인3 : 실전코딩 part 2 
+
+- MaterialApp 안에 debugShowCheckedModeBanner: false 를 통해 debug 표시를 없앨 수 있다. 
+- <Widget>에 const를 넣으니깐 Row() 위젯을 썻을 때 에러 메시지를 출력했는데 이는 provider관련 부분으로 해당 유튜브의 provider관련 영상의 11분 35초 부분을 보면 확인할 수 있다고 한다.
+- SizedBox()위젯은 height로 높이, width로 옆으로도 띄울 수 있다.
+- Divider로 밑줄을 칠 수 있다.
+- image를 쓰기 위해서는 pubspec.yaml에 이미지를 지정해 줘야 쓸 수 있다. 
