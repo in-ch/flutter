@@ -20,20 +20,23 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var center = Center(
-      child: Column(
-        children: const <Widget>[
-          Text('Hello1'),
-          Text('Hello'),
-          Text('Hello'),
-        ],
-      ),
-    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('인치 앱'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+        elevation: 0.0,
       ),
-      body: center,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            Text('hello'),
+            Text('hello'),
+            Text('hello'),
+          ],
+        ),
+      ),
     );
   }
 }

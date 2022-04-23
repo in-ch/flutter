@@ -43,3 +43,9 @@
 
 - 항상 위젯을 만들 때 stateless를 만들 것인지 stateful로 만들 지 생각해야함
 - scaffold -> 무언가를 혼자 해낼 수 있는 발판임. -> 빈 화면(도화지)
+
+#플러터 캐릭터 페이지 디자인 1. 위젯정리
+
+- mainAxisAlignment.center -> 센터로 (세로축으로만)
+- Padding:(padding: EdgeInsets.fromLTRB(left, top, right, bottom)) -> 패딩 줄 수 있음.
+- Center -> 센터로 (가로축만)
