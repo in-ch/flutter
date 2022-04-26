@@ -98,3 +98,10 @@
 - Widget build(BuildContext context){ return Scaffold(....)}에서 Widget은 String, int와 같은 type이고 안에 들어간 arg는 BuildContext라는 type을 가진 context라는 인자값이다. 그리고 scaffold를 return 하는 거다. 
 - 여기서 context는 어디에 위치하고 있는 가에 대한 정보가 담겨져 있다. 
 - 모든 위젯은 각각 자신의 BuildContext를 가지고 있는데, BuildContext는 stateless위젯이나 state 빌드 메서드에 의해서 리턴된 위젯의 부모가 된다. -> Scaffold는 statelessWidget의 context값을 그대로 물려받는다. 
+
+#플러터 : 스낵바(snack bar와 buildcontext)
+
+- OutlinedButton -> react native의 TouchableOpacity같은 느낌의 위젯인 듯 
+- Scaffold.of(context) method -> "현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라"
+  따라서 Something.of(context)는 위로 올라가면서 가장 가까운 something를 반환함.
+- Builder은 지금까지 사용했던 context가 무엇이던 간에 다 무시하고 새로운 context로 새로운 위젯을 만들라는 뜻임.
