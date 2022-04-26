@@ -83,6 +83,10 @@
 - leading 속성을 쓰면 왼쪽에 무엇인가를 추가할 수 있다. (아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할 때)
 - actions 속성은 복수의 아이콘 버튼 등을 오른쪽에 배치할 때 쓰임.
 
-#플러터 : Drawer 메뉴 만들기 1 
+#플러터 : Drawer 메뉴 만들기 1 & 2
 
-- 
+- Drawer -> ListView -> UserAccountDrawerHeader -> 1) currentAccountPicture, accoutName, accoutEmail, onDetailsPressed, decoration, otherAccountPictures
+                     -> ListTile -> 1) Icon, Text, onTap
+
+- onPressed는 주로 버튼에 사용되고, onTap은 getureDetector, InkWell 등에 사용된다. (길게 누르거나, 두번 누르거나 등 등이 되기 때문에)
+- leading 속성과 반대되는 trailing 속성이라고 있다. 

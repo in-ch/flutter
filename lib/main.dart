@@ -50,7 +50,17 @@ class MyPage extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/thor.png'),
               ),
-              accountName: Text('incg'),
+              otherAccountsPictures: const [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/thor.png'),
+                  backgroundColor: Colors.white,
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/thor.png'),
+                  backgroundColor: Colors.white,
+                )
+              ],
+              accountName: Text('inch'),
               accountEmail: Text('inch@neo.com'),
               onDetailsPressed: () {
                 print('arrow is clicked');
@@ -60,7 +70,31 @@ class MyPage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(40.0),
                       bottomRight: Radius.circular(40.0))),
-            )
+            ),
+            ListTile(
+              leading: Icon(Icons.home, color: Colors.grey[850]),
+              title: Text('Home'),
+              onTap: () {
+                print('Home is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.question_answer, color: Colors.grey[850]),
+              title: Text('Q&A'),
+              onTap: () {
+                print('question is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.ac_unit, color: Colors.grey[850]),
+              title: Text('ac unit'),
+              onTap: () {
+                print('ac unit is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
           ],
         ),
       ),
