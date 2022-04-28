@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(const MyInchApp());
 
@@ -98,41 +99,34 @@ class MyPage extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
-          child: Center(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,   최대 공간을 차지하면서 가운데 정렬
-          // mainAxisSize: MainAxisSize.min,  최소 공간을 차지하면서 가운데 정렬
-          // verticalDirection: VerticalDirection.up,  아래부터 하나씩 쌓을 수 있음. down은 위에서 부터
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,  // 세로로 공간을 띄우면서
-          // mainAxisAlignment:
-          //     MainAxisAlignment.spaceBetween, // 세로로 공간을 완전히 차지하면서 거리 두면서
-          // crossAxisAlignment: CrossAxisAlignment.end  // 오른쪽 끝점 정렬
-          // crossAxisAlignment: CrossAxisAlignment.stretch // 가로 방향으로 쭉 늘려버림.
-          children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-              child: Text('Container 1'),
-            ),
-            Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Text('Container 2')),
-            Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: Text('Container 3')),
-            Container(
-              width: double
-                  .infinity, // 끝점에 맞춰서 정렬을 해 버림. 이건 따로 존재하지 않고 위에 3개가 정렬이 되버림
-            )
-          ],
-        ),
-      )),
+      body: MySnackBar(),
     );
   }
+}
+
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: OutlinedButton(
+        child: Text('Toast'),
+        onPressed: () {
+          flutterToast();
+        },
+      ),
+    );
+  }
+}
+
+void flutterToast() {
+  Fluttertoast.showToast(
+    msg: 'Flutter',
+    gravity: ToastGravity.BOTTOM, // 위치
+    backgroundColor: Colors.redAccent,
+    fontSize: 20.0,
+    textColor: Colors.white,
+    toastLength: Toast.LENGTH_SHORT,
+  );
 }

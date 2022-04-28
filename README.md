@@ -119,4 +119,16 @@
 - flutter에도 safeArea가 있다.
 - margin 쓰는 방법은 margin: EdgeInsets.all(10) 혹은 EdgeInsets.symmetric(vertical: 80,      horizontal: 20) -> 양옆, 위옆 조절 
 - padding도 마찬가지 
-- 
+
+# 컬럼 위젯과 로우 위젯 
+
+- row와 column의 속성은 똑같음. 맞춰서 쓰면 됨. (css의 display:flex랑 느낌이 비슷하다.)
+- mainAxisAlignment: MainAxisAlignment.center,   최대 공간을 차지하면서 가운데 정렬
+- mainAxisSize: MainAxisSize.min,  최소 공간을 차지하면서 가운데 정렬
+- verticalDirection: VerticalDirection.up,  아래부터 하나씩 쌓을 수 있음. down은 위에서 부터
+- mainAxisAlignment: MainAxisAlignment.spaceEvenly,  // 세로로 공간을 띄우면서
+- mainAxisAlignment:
+-     MainAxisAlignment.spaceBetween, // 세로로 공간을 완전히 차지하면서 거리 두면서
+- crossAxisAlignment: CrossAxisAlignment.end  // 오른쪽 끝점 정렬
+- crossAxisAlignment: CrossAxisAlignment.stretch // 가로 방향으로 쭉 늘려버림.
+- https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e -> 레이아웃 사이트 
