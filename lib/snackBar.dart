@@ -1,7 +1,7 @@
+// ignore: file_names
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(const MyInchApp());
 
@@ -111,22 +111,21 @@ class MySnackBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: OutlinedButton(
-        child: Text('Toast'),
+        child: Text('Show me'),
         onPressed: () {
-          flutterToast();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Hello',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.teal,
+              duration: Duration(milliseconds: 1000),
+            ),
+          );
         },
       ),
     );
   }
-}
-
-void flutterToast() {
-  Fluttertoast.showToast(
-    msg: 'Flutter',
-    gravity: ToastGravity.BOTTOM, // 위치
-    backgroundColor: Colors.redAccent,
-    fontSize: 20.0,
-    textColor: Colors.white,
-    toastLength: Toast.LENGTH_SHORT,
-  );
 }

@@ -105,3 +105,7 @@
 - Scaffold.of(context) method -> "현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라"
   따라서 Something.of(context)는 위로 올라가면서 가장 가까운 something를 반환함.
 - Builder은 지금까지 사용했던 context가 무엇이던 간에 다 무시하고 새로운 context로 새로운 위젯을 만들라는 뜻임.
+
+#플러터 : 빌더(Builder widget)위젯 없이 스낵바 만들기 
+
+- 플루터 라이브러리를 설치할 때는 pubspec.yaml에서 입력해서 설치해야 한다. 
