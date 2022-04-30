@@ -132,3 +132,12 @@
 - crossAxisAlignment: CrossAxisAlignment.end  // 오른쪽 끝점 정렬
 - crossAxisAlignment: CrossAxisAlignment.stretch // 가로 방향으로 쭉 늘려버림.
 - https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e -> 레이아웃 사이트 
+
+# 네비게이터 이해하기 
+
+- Route의 개념 : 스마트폰에서 보여지는 하나의 페이지
+- Navigator의 저의와 push, pop 함수, Stack 자료 구조 : 카드 덱 구조 -> 데이터가 들어오는 데로 하나씩 쌓이는 것, 이것을 관리하기 위해 Push method가 제공되고 하나하나씩 위에 쌓는 거고, pop으로 지우는 것 
+  즉, Navigator 위젯으로 route를 관리하고 push와 pop method로 route를 넣고 빼고 하는 것임. 
+  Navigator 위젯은 무조건 Material 위젯 안에 child로 선언되어야 함 
+- MaterialPageRoute위젯과 context
+- 페이지 이동 기능 구현 완성 
