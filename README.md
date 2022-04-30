@@ -141,3 +141,10 @@
   Navigator 위젯은 무조건 Material 위젯 안에 child로 선언되어야 함 
 - MaterialPageRoute위젯과 context
 - 페이지 이동 기능 구현 완성 
+
+# 네비게이터와 푸시네임드 메소드 
+
+- context 값이 필요치 않다면 보통 _로 작성한다. 
+- MaterialApp의 initialRoute와 pushNamed를 이용하면 주소를 route마다 정할 수 있어서 더 직관적인 navigator 이동이 가능하다. 
+
+
