@@ -147,4 +147,9 @@
 - context 값이 필요치 않다면 보통 _로 작성한다. 
 - MaterialApp의 initialRoute와 pushNamed를 이용하면 주소를 route마다 정할 수 있어서 더 직관적인 navigator 이동이 가능하다. 
 
+# Collection and Generic 
 
+- String interpolation -> $a 님 반갑습니다 => 홍길동님 반갑습니다. 템플렛 리터널이랑 비슷한 거다. 
+- Collection: 데이터들을 모아서 가지고 있는 자료 구조(list, set, map 등 등)
+- Generic: Collection이 가지고 있는 데이터들의 데이터 타입을 지정 
+- list의 종류는 2가지가 있다. fixed-length list와 growable list 이렇게 2개 
