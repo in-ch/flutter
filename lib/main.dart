@@ -1,62 +1,75 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int counter = 0;
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      debugShowCheckedModeBanner: false,
+      title: 'Dice game',
+      home: LogIn(),
+    );
+  }
+}
+
+class LogIn extends StatefulWidget {
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Log in'),
+        backgroundColor: Colors.redAccent,
+        centerTitle: true,
+        leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+        actions: <Widget>[
+          IconButton(icon: const Icon(Icons.search), onPressed: () {})
+        ],
       ),
-      home: Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text('You have pushed the button this many times:'),
-              Text('$counter', style: Theme.of(context).textTheme.bodyText1),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  FloatingActionButton(
-                      child: Icon(Icons.add),
-                      onPressed: () {
-                        setState(() {
-                          counter++;
-                          print("$counter");
-                        });
-                      }),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  FloatingActionButton(
-                      child: const Icon(Icons.remove),
-                      onPressed: () {
-                        setState(() {
-                          counter--;
-                          print("$counter");
-                        });
-                      }),
-                ],
-              )
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Center(
+              child: Image(image: AssetImage('images/chef.gif')),
+            ),
+            Form(
+                child: Theme(
+                    data: ThemeData(
+                        primaryColor: Colors.teal,
+                        inputDecorationTheme: InputDecorationTheme(
+                            labelStyle: TextStyle(color: Colors.teal))),
+                    child: Container(
+                      padding: EdgeInsets.all(40.0),
+                      child: Column(
+                        children: const [
+                          TextField(
+                            decoration:
+                                InputDecoration(labelText: "Enter dice"),
+                            keyboardType: TextInputType.text,
+                          ),
+                          TextField(
+                            decoration:
+                                InputDecoration(labelText: "Enter password"),
+                            keyboardType: TextInputType.text,
+                            obscureText: true,
+                          ),
+                          SizedBox(height: 40.0),
+                          OutlinedButton(
+                            onPressed: (null),
+                            child: Icon(Icons.arrow_forward),
+                          )
+                        ],
+                      ),
+                    )))
+          ],
         ),
       ),
     );

@@ -170,3 +170,10 @@
 - stateful widget의 build method는 state class가 가지고 있다. 
 - stateful widget의 build method가 호출되는 2가지 경우 1) child 위젯의 생성자를 통해서 데이터가 전달될 때 2) Internal state가 바뀔 때 
 - 왜 2가지 클래스를 갖냐면 기본적으로 stateful widget은 widget을 상속받으므로 처음에는 임뮤터블하므로 state라는 클래스를 하나 더 생성하는 것이다.
+
+# 로그인과 주사위 게임 
+
+- SingleChildScrollView : react native의 avoidKeyboardView와 비슷한 역할
+- TextField : 텍스트 입력 폼 
+- TextField의 InputDecorationTheme속성 : label 색상을 지정할 수 있음.  -> data 따로 textField 따로 
+- TextField의 keyboardType속성 : 키보드 타입을 정의해줄 수 있음. 
