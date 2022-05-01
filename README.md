@@ -153,3 +153,13 @@
 - Collection: 데이터들을 모아서 가지고 있는 자료 구조(list, set, map 등 등)
 - Generic: Collection이 가지고 있는 데이터들의 데이터 타입을 지정 
 - list의 종류는 2가지가 있다. fixed-length list와 growable list 이렇게 2개 
+
+# stateful widget (1)
+
+- state란 UI가 변경되도록 영향을 미치는 데이터이다. 
+- Flutter App의 구성은 우리가 컨트롤하고 만지는 Widget tree, element tree, render tree가 있다. element tree는 widget tree를 1:1 대응하고 widget tree의 속성 정보를 저장하는 곳이다. 
+따라서 hot reload를 진행할 때 바뀐 부분만 체킹해서 render tree에 전달해서 바뀐 부분만 rebuild 할 수 있는 것이다. 
+- 따라서 statleless widget의 Text의 값이 변한다면 그것은 reload가 진행된 후 rebuild가 진행되는 것이므로 데이터가 변하는 것이 아니다. (오직 rebuild를 통해서만 새로운 state를 적용 할 수 있다. )
+- render tree는 element tree와 1:1 대응한다. 
+- stateless의 build 과정 => Container widget -> hot reload -> build method -> widget tree rebuild -> element tree link update -> element tree info -> render tree -> Render object re-rendering 
+
