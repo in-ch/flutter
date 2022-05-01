@@ -163,3 +163,10 @@
 - render tree는 element tree와 1:1 대응한다. 
 - stateless의 build 과정 => Container widget -> hot reload -> build method -> widget tree rebuild -> element tree link update -> element tree info -> render tree -> Render object re-rendering 
 
+# stateful widget (2) 
+
+- 두 위젯의 공통점은 생성자를 통해서 외부에서 데이터가 입력이 되면 그 결과를 반영하기 위해서 build method가 호출되고 위젯들이 rebuild되고 필요한 부분의 ui가 다시 랜더링하게 된다는 것 
+- 차이점은 stateful widget은 내부에 state라는 또다른 클래스가 있다는 것이고 두개가 결합되서 stateful widget을 만드는 것이다. 
+- stateful widget의 build method는 state class가 가지고 있다. 
+- stateful widget의 build method가 호출되는 2가지 경우 1) child 위젯의 생성자를 통해서 데이터가 전달될 때 2) Internal state가 바뀔 때 
+- 왜 2가지 클래스를 갖냐면 기본적으로 stateful widget은 widget을 상속받으므로 처음에는 임뮤터블하므로 state라는 클래스를 하나 더 생성하는 것이다.
