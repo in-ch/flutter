@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'dice.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,6 +22,9 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogInState extends State<LogIn> {
+  TextEditingController controller = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,13 +53,15 @@ class _LogInState extends State<LogIn> {
                     child: Container(
                       padding: EdgeInsets.all(40.0),
                       child: Column(
-                        children: const [
+                        children: [
                           TextField(
+                            controller: controller,
                             decoration:
                                 InputDecoration(labelText: "Enter dice"),
                             keyboardType: TextInputType.text,
                           ),
                           TextField(
+                            controller: controller2,
                             decoration:
                                 InputDecoration(labelText: "Enter password"),
                             keyboardType: TextInputType.text,
@@ -63,7 +69,24 @@ class _LogInState extends State<LogIn> {
                           ),
                           SizedBox(height: 40.0),
                           OutlinedButton(
-                            onPressed: (null),
+                            onPressed: () {
+                              if (controller.text == 'dice' &&
+                                  controller2.text == '1234') {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            Dice()));
+                              } else if (controller.text == 'dice' &&
+                                  controller2.text != '1234') {
+                                showSnackBar2(context);
+                              } else if (controller.text != 'dice' &&
+                                  controller2.text == '1234') {
+                                showSnackBar3(context);
+                              } else {
+                                showSnackBar(context);
+                              }
+                            },
                             child: Icon(Icons.arrow_forward),
                           )
                         ],
@@ -74,4 +97,46 @@ class _LogInState extends State<LogIn> {
       ),
     );
   }
+}
+
+void showSnackBar(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        '로그인 정보를 확인해 주세요.',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Colors.teal,
+      duration: Duration(milliseconds: 2000),
+    ),
+  );
+}
+
+void showSnackBar2(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        '비밀번호가 일치하지 않습니다.',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Colors.teal,
+      duration: Duration(milliseconds: 2000),
+    ),
+  );
+}
+
+void showSnackBar3(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        '다이스의 철자를 확인하세요.',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Colors.teal,
+      duration: Duration(milliseconds: 2000),
+    ),
+  );
 }

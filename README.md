@@ -177,3 +177,8 @@
 - TextField : 텍스트 입력 폼 
 - TextField의 InputDecorationTheme속성 : label 색상을 지정할 수 있음.  -> data 따로 textField 따로 
 - TextField의 keyboardType속성 : 키보드 타입을 정의해줄 수 있음. 
+
+# 로그인과 주사위 게임 2
+ 
+ - TextField에 입력한 값을 사용하기 위해서는 TextEditingController라는 컨트롤러를 생성해서 사용함. -> textfield와 연결
+ - 원래 TextEditingController를 생성하고 나서 메모리 누수를 막기위해 dispose method라는 것을 실행시켜야 하는데 여기서는 생략.
