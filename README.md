@@ -182,3 +182,14 @@
  
  - TextField에 입력한 값을 사용하기 위해서는 TextEditingController라는 컨트롤러를 생성해서 사용함. -> textfield와 연결
  - 원래 TextEditingController를 생성하고 나서 메모리 누수를 막기위해 dispose method라는 것을 실행시켜야 하는데 여기서는 생략.
+
+ # 로그인과 주사위 게임 3
+
+ - TextField에 autoFocus를 주면 화면이 렌더링 될 시 자동으로 키보드가 올라온다.
+ - GestureDetector 기능을 통해 사용자의 행동을 감지할 수 있다.
+ - onTap: 은 클릭 뿐 아니라 드래그나 버튼 두번 누르기 등 다양하게 쓰이고 onPress:는 오직 버튼을 눌렀을 때만 쓰인다.
+ - FocusNode : 포커스를 받는 특정 위젯을 식별, FocusScope: 어떤 위젯들까지 포커스를 받는지 범위를 나타냄
+ - setState로 변수 바꿀 수 있음.
+ - flutter toast 라이브러리 유용한 듯
+
+ 

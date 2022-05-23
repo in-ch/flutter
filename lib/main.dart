@@ -37,64 +37,72 @@ class _LogInState extends State<LogIn> {
           IconButton(icon: const Icon(Icons.search), onPressed: () {})
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.only(top: 50)),
-            Center(
-              child: Image(image: AssetImage('images/chef.gif')),
+      body: Builder(builder: (context) {
+        return GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(padding: EdgeInsets.only(top: 50)),
+                Center(
+                  child: Image(image: AssetImage('images/chef.gif')),
+                ),
+                Form(
+                    child: Theme(
+                        data: ThemeData(
+                            primaryColor: Colors.teal,
+                            inputDecorationTheme: InputDecorationTheme(
+                                labelStyle: TextStyle(color: Colors.teal))),
+                        child: Container(
+                          padding: EdgeInsets.all(40.0),
+                          child: Column(
+                            children: [
+                              TextField(
+                                autofocus: true,
+                                controller: controller,
+                                decoration:
+                                    InputDecoration(labelText: "Enter dice"),
+                                keyboardType: TextInputType.text,
+                              ),
+                              TextField(
+                                controller: controller2,
+                                decoration: InputDecoration(
+                                    labelText: "Enter password"),
+                                keyboardType: TextInputType.text,
+                                obscureText: true,
+                              ),
+                              SizedBox(height: 40.0),
+                              OutlinedButton(
+                                onPressed: () {
+                                  if (controller.text == 'dice' &&
+                                      controller2.text == '1234') {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                Dice()));
+                                  } else if (controller.text == 'dice' &&
+                                      controller2.text != '1234') {
+                                    showSnackBar2(context);
+                                  } else if (controller.text != 'dice' &&
+                                      controller2.text == '1234') {
+                                    showSnackBar3(context);
+                                  } else {
+                                    showSnackBar(context);
+                                  }
+                                },
+                                child: Icon(Icons.arrow_forward),
+                              )
+                            ],
+                          ),
+                        )))
+              ],
             ),
-            Form(
-                child: Theme(
-                    data: ThemeData(
-                        primaryColor: Colors.teal,
-                        inputDecorationTheme: InputDecorationTheme(
-                            labelStyle: TextStyle(color: Colors.teal))),
-                    child: Container(
-                      padding: EdgeInsets.all(40.0),
-                      child: Column(
-                        children: [
-                          TextField(
-                            controller: controller,
-                            decoration:
-                                InputDecoration(labelText: "Enter dice"),
-                            keyboardType: TextInputType.text,
-                          ),
-                          TextField(
-                            controller: controller2,
-                            decoration:
-                                InputDecoration(labelText: "Enter password"),
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                          ),
-                          SizedBox(height: 40.0),
-                          OutlinedButton(
-                            onPressed: () {
-                              if (controller.text == 'dice' &&
-                                  controller2.text == '1234') {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            Dice()));
-                              } else if (controller.text == 'dice' &&
-                                  controller2.text != '1234') {
-                                showSnackBar2(context);
-                              } else if (controller.text != 'dice' &&
-                                  controller2.text == '1234') {
-                                showSnackBar3(context);
-                              } else {
-                                showSnackBar(context);
-                              }
-                            },
-                            child: Icon(Icons.arrow_forward),
-                          )
-                        ],
-                      ),
-                    )))
-          ],
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
