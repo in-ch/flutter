@@ -202,4 +202,9 @@
 - const는 compile-time constant이고 컴파일 시에 상수가 됨. -> const 변수는 선언과 동시에 초기화됨. 
 
 
- 
+ # refactoring 
+
+ - Opacity라는 위젯이 있음. 그리고 child에 Image를 줄 수 있음. 
+ - Shape를 통해 border-radius를 줄 수도 있음. 
+ - Props를 넘기는 법은 react랑 비슷한듯 .. 
+ - _를 붙이면 같은 파일 내에서만 접근 가능하고 접근제어자라는 뜻이며, 자바나 c의 private랑 역할을 똑같음. 
