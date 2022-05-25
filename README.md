@@ -157,11 +157,14 @@
 # stateful widget (1)
 
 - state란 UI가 변경되도록 영향을 미치는 데이터이다. 
-- Flutter App의 구성은 우리가 컨트롤하고 만지는 Widget tree, element tree, render tree가 있다. element tree는 widget tree를 1:1 대응하고 widget tree의 속성 정보를 저장하는 곳이다. 
-따라서 hot reload를 진행할 때 바뀐 부분만 체킹해서 render tree에 전달해서 바뀐 부분만 rebuild 할 수 있는 것이다. 
-- 따라서 statleless widget의 Text의 값이 변한다면 그것은 reload가 진행된 후 rebuild가 진행되는 것이므로 데이터가 변하는 것이 아니다. (오직 rebuild를 통해서만 새로운 state를 적용 할 수 있다. )
+- Flutter App의 구성은 우리가 컨트롤하고 만지는 Widget tree, element tree, render tree가 있다. element tree는 widget tree를 1:1 대응하고 widget     
+  tree의 속성 정보를 저장하는 곳이다. 
+  따라서 hot reload를 진행할 때 바뀐 부분만 체킹해서 render tree에 전달해서 바뀐 부분만 rebuild 할 수 있는 것이다. 
+- 따라서 statleless widget의 Text의 값이 변한다면 그것은 reload가 진행된 후 rebuild가 진행되는 것이므로 데이터가 변하는 것이 아니다. (오직 rebuild를 통해서만 
+  새로운 state를 적용 할 수 있다. )
 - render tree는 element tree와 1:1 대응한다. 
-- stateless의 build 과정 => Container widget -> hot reload -> build method -> widget tree rebuild -> element tree link update -> element tree info -> render tree -> Render object re-rendering 
+- stateless의 build 과정 => Container widget -> hot reload -> build method -> widget tree rebuild -> element tree link update -> 
+  element tree info -> render tree -> Render object re-rendering 
 
 # stateful widget (2) 
 
@@ -199,7 +202,7 @@
  - final 변수값을 초기화하는 방법은 2가지이다. 첫번째는 변수 선언 시 초기화하는 것이고, 두번째는 객체 생성 시 외부데이터를 받아서 생성자를 통해서 초기화하는 방법이다. 
  - 느낌은 대충 final은 중간에 값을 초기화 시키고 다시는 못 바꾸게 하는 느낌, const는 그냥 처음부터 값이랑 같이 선언해서 쓰는 느낌 
  - 그니깐 앱이 실행된 다음에 사용자에 의해서 초기화하는 느낌. -> 이런 특성때문에 run-time constant라고 부름. (앱이 실행된 다음에 초기화됨)
-- const는 compile-time constant이고 컴파일 시에 상수가 됨. -> const 변수는 선언과 동시에 초기화됨. 
+ - const는 compile-time constant이고 컴파일 시에 상수가 됨. -> const 변수는 선언과 동시에 초기화됨. 
 
 
  # refactoring 
@@ -208,3 +211,17 @@
  - Shape를 통해 border-radius를 줄 수도 있음. 
  - Props를 넘기는 법은 react랑 비슷한듯 .. 
  - _를 붙이면 같은 파일 내에서만 접근 가능하고 접근제어자라는 뜻이며, 자바나 c의 private랑 역할을 똑같음. 
+
+ # Future, async, await 
+
+ - Future : 일종의 약속, 영수증, 아직 개봉하지 않은 박스 등 ..  javascript의 Promise랑 같은 개념임. 
+ - 미래에 String, int, image 등이 구체적인 결과물로 나타나서 실제적인 객체로 반환된다는 개념 
+ - Future<String>같이 미리 반환받을 값을 지정해 줄 수 있음. 
+ - Synchronous 개념: 오직 한가지 일만 수행 
+ - asynchronous 개념: 일을 하는 데 있어서 추구하는 목적이 다를 수 있고 동시에 일어날 수 있는 방식으로 일하는 방식
+
+ - Future 클래스는 비동기 작업을 할 때 사용
+ - Future는 일정 소요시간 후에 실제 데이터나 에어를 반환
+ - async 클래스는 await 메스서드를 가짐
+ - await로 선언된 메서드는 응답이 처리될 때 까지 대기 
+
