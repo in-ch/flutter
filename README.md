@@ -225,3 +225,21 @@
  - async 클래스는 await 메스서드를 가짐
  - await로 선언된 메서드는 응답이 처리될 때 까지 대기 
 
+ # androidX 
+
+ - Android X migration : 운영 환경 A -> 운영 환경 B
+ - 마이그레이션 시키지 않으면 빌드 에러가 나올 가능성이 크다. 
+ - get dependence를 눌러 패키지를 다운받아야함 . 
+ - 혹은 flutter packages get 이라고 cli에 typeing하면 된다 .
+ - android/gradle.properties 폴더로 가서 android.useAndroidX=true, android.enableJetifier=true를 입력 
+ - android/build.gradle로 간다. 
+ - 이걸 열고 ..... 그냥 나중에 마이그레이션할 일 있을 때 다시 보고 따라 하자.
+
+# dart 반복문과 로또 프로그램 
+
+ - For loop 구조
+ - For in loop 구조 
+ - forEach loop 구조 : for in loop 보다 성능이 더 좋다고 함.
+ - for loop, for in loop // 로또 프로그램
+ - Set , while loop // 로또 프로그램 
+ - List, generate // 로또 프로그램 
