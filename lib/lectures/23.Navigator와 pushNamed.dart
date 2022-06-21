@@ -1,7 +1,7 @@
-import 'package:examp/pages/screenA.dart';
-import 'package:examp/pages/screenB.dart';
-import 'package:examp/pages/screenC.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/lectures/pages/screenA.dart';
+import 'package:flutter_app/lectures/pages/screenB.dart';
+import 'package:flutter_app/lectures/pages/screenC.dart';
 
 void main() {
   runApp(const MyApp());

@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   FloatingActionButton(
-                      child: Icon(Icons.add),
+                      child: const Icon(Icons.add),
                       onPressed: () {
                         setState(() {
                           counter++;

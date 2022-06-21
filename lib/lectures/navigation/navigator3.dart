@@ -2,9 +2,9 @@
 
 import 'dart:js';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screenA.dart';
-import 'package:flutter_app/screenB.dart';
-import 'package:flutter_app/screenC.dart';
+import 'package:flutter_app/lectures/pages/screenA.dart';
+import 'package:flutter_app/lectures/pages/screenB.dart';
+import 'package:flutter_app/lectures/pages/screenC.dart';
 
 void main() => runApp(const MyInchApp());
 

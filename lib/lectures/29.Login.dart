@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/my_button/MyButton.dart';
+import 'package:flutter_app/lectures/my_button/MyButton.dart';
 
 class LogIn extends StatelessWidget {
+  const LogIn({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +40,11 @@ class LogIn extends StatelessWidget {
           ),
           ButtonTheme(
             height: 50.0,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(4.0),
+              ),
+            ),
             child: OutlinedButton(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,17 +62,17 @@ class LogIn extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(4.0),
-              ),
-            ),
           ),
           const SizedBox(
             height: 10.0,
           ),
           ButtonTheme(
             height: 50.0,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(4.0),
+              ),
+            ),
             child: OutlinedButton(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -88,11 +95,6 @@ class LogIn extends StatelessWidget {
                 ],
               ),
               onPressed: () {},
-            ),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(4.0),
-              ),
             ),
           ),
         ],

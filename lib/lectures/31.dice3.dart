@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'dice.dart';
+import '30.dice.dart';
 
 void main() => runApp(MyApp());
 
