@@ -27,14 +27,10 @@ class LogIn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           MyButton(
-            image: Image.asset('images/glogo.png'),
-            text: const Text(
-              'Login with Google',
-              style: TextStyle(color: Colors.black87, fontSize: 15.0),
-            ),
-            radius: 4.0,
-            onPressed: () {},
-          ),
+              background: MaterialStateProperty.all(Colors.red),
+              image: Image.asset('images/google.png'),
+              text: 'Login with Google',
+              onPressed: () {}),
           const SizedBox(
             height: 10.0,
           ),

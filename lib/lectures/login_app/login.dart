@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/lectures/my_button/MyButton.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({Key? key}) : super(key: key);
@@ -18,98 +19,24 @@ class SocialLogin extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ButtonTheme(
-                height: 50.0,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4.0),
+              MyButton(
+                  background: MaterialStateProperty.all(Colors.red),
+                  image: Image.asset('images/google.png'),
+                  text: 'Login with Google',
+                  onPressed: () {}),
+              MyButton(
+                  background: MaterialStateProperty.all(Colors.blue[300]),
+                  image: Image.asset('images/facebook.png'),
+                  text: 'Login with facebook',
+                  onPressed: () {}),
+              MyButton(
+                  background: MaterialStateProperty.all(Colors.yellow[700]),
+                  image: const Icon(
+                    Icons.mail,
+                    color: Colors.white,
                   ),
-                ),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.red)),
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset('images/google.png'),
-                      const Text(
-                        'Login with Google',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                      const Opacity(
-                        opacity: 0.0,
-                        child: Icon(
-                          Icons.mail,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              ButtonTheme(
-                height: 50.0,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4.0),
-                  ),
-                ),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset('images/facebook.png'),
-                      const Text(
-                        'Login with Facebook',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                      const Opacity(
-                        opacity: 0.0,
-                        child: Icon(
-                          Icons.mail,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              ButtonTheme(
-                height: 50.0,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4.0),
-                  ),
-                ),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.amberAccent)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const <Widget>[
-                      Icon(
-                        Icons.mail,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Login with Email',
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
-                      ),
-                      Opacity(
-                        opacity: 0.0,
-                        child: Icon(
-                          Icons.mail,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                  text: 'Login with email',
+                  onPressed: () {}),
             ],
           ),
         ));
