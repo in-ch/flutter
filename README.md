@@ -211,6 +211,10 @@
  - Shape를 통해 border-radius를 줄 수도 있음. 
  - Props를 넘기는 법은 react랑 비슷한듯 .. 
  - _를 붙이면 같은 파일 내에서만 접근 가능하고 접근제어자라는 뜻이며, 자바나 c의 private랑 역할을 똑같음. 
+ - 펑션은 Function, Boolean은 bool, stateful widget에서 썻다면 widget.example 이런 식으로 가져다가 
+    쓰면 됨 ㅋ 
+ - 
+
 
  # Future, async, await 
 
@@ -222,30 +226,21 @@
 
  - Future 클래스는 비동기 작업을 할 때 사용
  - Future는 일정 소요시간 후에 실제 데이터나 에어를 반환
- - async 클래스는 await 메스서드를 가짐
+ - async 클래스는 await 메서드를 가짐
  - await로 선언된 메서드는 응답이 처리될 때 까지 대기 
 
- # androidX 
 
- - Android X migration : 운영 환경 A -> 운영 환경 B
- - 마이그레이션 시키지 않으면 빌드 에러가 나올 가능성이 크다. 
- - get dependence를 눌러 패키지를 다운받아야함 . 
- - 혹은 flutter packages get 이라고 cli에 typeing하면 된다 .
- - android/gradle.properties 폴더로 가서 android.useAndroidX=true, android.enableJetifier=true를 입력 
- - android/build.gradle로 간다. 
- - 이걸 열고 ..... 그냥 나중에 마이그레이션할 일 있을 때 다시 보고 따라 하자.
+ - 동기 vs 비동기 
+   - 요청의 결과값이 리턴값과 동일한 것이 동기, 요청의 결과값이 리턴값과 다른 것이 비동기 
+   - 명령이 끝날 때 까지 제어권이 돌아오지 않으면 동기식 그렇지 않으면 비동기 식이다. 
+   - 다시 정의하자면 통신에서 상대방의 일정 신호에 의해 다음 동작이 이루어지면 동기, 상대방의 상태와 관계없이     일방적으로 동작하면 비동기이다.
+   - 동기는 직렬식인 거고 비동기는 병렬식인 거다. 
+   - 그렇다면 비동기 처리는 왜 필요할까? 데이터를 서버로부터 받아온다면 비동기로 처리하지 않을 경우 데이터를 받아오기까지 기다린 다음에 앱이 실행될 거고 서버에 가져오는 데이터 양이 늘어날수록 앱의 실행속도는 기하급수적으로 
+   느려진다. 따라서 setTimeout, AJAX 등으로 비동기식으로 데이터를 처리하는 것이다. 
+   - 아마 렌더링 따로 데이터 가져오는 거 따로 이런 식 ... 
 
-# dart 반복문과 로또 프로그램 
-
- - For loop 구조
- - For in loop 구조 
- - forEach loop 구조 : for in loop 보다 성능이 더 좋다고 함.
- - for loop, for in loop // 로또 프로그램
- - Set , while loop // 로또 프로그램 
- - List, generate // 로또 프로그램 
-
-# dart 반복문과 로또 프로그램 part 2 
-
- - set을 쓰면 중복 문제를 해결할 수 있다.  대괄호 대신 중괄호를 쓰면 됨. 
- - While을 같이쓰면 원하는 숫자만큼 set에서 뽑아낼 수 있음. 왜냐하면 set은 중복되면 1,2,3,4,5,5 식으로 뽑아내기 때문에 
- - 
+- 예제 앱 
+  - factory 생성자 : 개발자가 info 클래스를 사용해서 직접 인스턴스를 만드는 것이 아니라 argument를 통해서 
+    json 데이터가 넘어오면 자기가 알아서 info 클래스의 인스턴스를 생성해서 return해주는 역할을 한다. 
+  - snapshot은 어떤 순간에 데이터를 저장한다는 뜻이다.  null이 아닐 경우 hasData는 무조건 true 
+  - Future build는 데이터를 받아오기 전에 그릴 수 있는 부분은 먼저 그려준다. 
