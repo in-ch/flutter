@@ -244,3 +244,7 @@
     json 데이터가 넘어오면 자기가 알아서 info 클래스의 인스턴스를 생성해서 return해주는 역할을 한다. 
   - snapshot은 어떤 순간에 데이터를 저장한다는 뜻이다.  null이 아닐 경우 hasData는 무조건 true 
   - Future build는 데이터를 받아오기 전에 그릴 수 있는 부분은 먼저 그려준다. 
+
+# android X 
+- android X Migration은 필수이다. 
+- 근데 요즘 프로젝트는 다 useAdnroidX=true 설정 다 되어 있다.... 
