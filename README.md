@@ -248,3 +248,6 @@
 # android X 
 - android X Migration은 필수이다. 
 - 근데 요즘 프로젝트는 다 useAdnroidX=true 설정 다 되어 있다.... 
+
+# gitemoji 등록 
+  
