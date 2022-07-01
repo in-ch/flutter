@@ -251,7 +251,17 @@
 
 # gitemoji 등록 
 
-# (dart) 반복문 (loop)과 로또 프로그램 
+# (dart) 반복문 (loop)과 로또 프로그램  part 1 
 - For loop 구조, for in loop 구조, forEach loop 구조, for loop, for in loop / 로또 프로그램 
 - Set, while loop / 로또 프로그램
 - List, generate를 통해 로또 프로그램 최적화 
+
+# (dart) 반복문 (loop)과 로또 프로그램  part 1 
+- Set을 활용하면 List와 다르게 중복을 피할 수 있다. 
+- List는 []인데 Set은 {}이다. 
+- [1, 2, 3, 3] -> [1, 2, 3] 식으로 바뀜 
+
+# (dart) 반복문 (loop)과 로또 프로그램  part 2
+- List<int>.generate(10, (i) => i+1) -> 1부터 10까지의 숫자를 넣어줌 
+- Shuffle 함수 쓰면 막 섞어줌 ㅋ 
+- sublist를 통해서 리스트의 length를 줄일 수 있음. 
