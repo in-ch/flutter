@@ -9,22 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Hello world',
-                textDirection: TextDirection.ltr,
-              )
-            ],
-          )
-        ],
-      ),
-    );
+    return Container();
   }
 }

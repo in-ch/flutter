@@ -250,4 +250,8 @@
 - 근데 요즘 프로젝트는 다 useAdnroidX=true 설정 다 되어 있다.... 
 
 # gitemoji 등록 
-  
+
+# (dart) 반복문 (loop)과 로또 프로그램 
+- For loop 구조, for in loop 구조, forEach loop 구조, for loop, for in loop / 로또 프로그램 
+- Set, while loop / 로또 프로그램
+- List, generate를 통해 로또 프로그램 최적화 
