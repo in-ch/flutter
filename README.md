@@ -265,3 +265,27 @@
 - List<int>.generate(10, (i) => i+1) -> 1부터 10까지의 숫자를 넣어줌 
 - Shuffle 함수 쓰면 막 섞어줌 ㅋ 
 - sublist를 통해서 리스트의 length를 줄일 수 있음. 
+
+# Future ~ async 심화 학습 
+- Thread란 프로세스내에서 실행되는 흐름의 단위 
+- Process vs program의 차이점 : Program은 더블 클릭했을 때만 작동하는 데이터 묶음, process는 program이 더블 클릭되면 메모리에 할당되고 생명이 있는 process가 됨. 
+- Dart는 싱글 스레드로 운영되는 언어 -> 한 번에 오직 하나의 작업만 실행함. 
+- 어떻게 복잡한 작업을 dart는 잘 처리할까? Event loop 덕분임. 
+- Thread가 생성되는 순간 dart는 자동적으로 3가지 작업을 실시함. 
+  1) Fist In First Out (FIFO) 방식으로 "MicroTask"와 Event" 준비
+  2) main 함수 실행
+  3) event loop 실행 
+
+- Future 
+  1) 다트에 의해서 future 객체가 내부적인 배열에 등록
+  2) Future 관련해서 실행되어야 하는 코드들이 이벤트 큐(대기열)에 등록
+  3) 불완전한 future객체가 반환
+  4) Synchronous 방식으로 실행되어야 할 코드 먼저 실행 (*)
+  5) 최정적으로 실제적인 data값이 future 객체로 전달 
+
+- Async method 
+  1) 메서드를 통해서 나오는 결과물은 future
+  2) Await 키워드를 만날때까지 synchronous 방식으로 코드처리
+  3) await 키워드를 만나면 future가 완료될 때까지 대기
+  4) future가 완료 되자마자 그 다음 코드들을 실행 
+
