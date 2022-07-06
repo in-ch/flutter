@@ -289,3 +289,15 @@
   3) await 키워드를 만나면 future가 완료될 때까지 대기
   4) future가 완료 되자마자 그 다음 코드들을 실행 
 
+# Flutter 2.0, Null safety 
+- Flutter가 안 망하는 이유
+  1) 구글이 폐기한 227개의 product는 모두 생산성을 담당
+  2) 지금도 flutter는 전 세계적으로 사용되고 있음.
+  3) 구글이 폐기하려고 하는 프레임워크는 Angularjs 1.x 버전 
+  4) 구글에 있어서 Fuchsia와 Flutter는 매우 중요함. 
+
+- Null safety -> 걍 null 못 쓰게 하는 것 
+  1) Null: 아직 값이 정해지지 않은 것 
+  2) void fly() {} <- 이것처럼 아직 body(구현구)에 내용이 없는 것을 추상 메소드라고 함. 
+  3) 추상 메소드가 집합을 모이면 하나의 type이 된다. 
+  4) type들이 모여서 class가 된다. 
