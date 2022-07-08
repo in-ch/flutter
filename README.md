@@ -301,3 +301,16 @@
   2) void fly() {} <- 이것처럼 아직 body(구현구)에 내용이 없는 것을 추상 메소드라고 함. 
   3) 추상 메소드가 집합을 모이면 하나의 type이 된다. 
   4) type들이 모여서 class가 된다. 
+
+# Flutter 2.0 Null safety part2
+- Null safety 3가지 핵심
+  1) 모든 변수는 null이 될 수 없으며, non-nullable 변수에는 null값을 할당할 수 없음
+  2) non-nullable 변수를 위한 null check를 할 필요가 없어짐. 
+  3) "Class 내의 변수는" 반드시 선언과 동시에 초기화를 시켜야 함. 
+- Null safety를 끄는 방법 
+  1) ? 붙이기 - null이 올 수도 있다,.
+  2) late - 변수가 늦게 초기화될 때 선언 
+  3) Exclamation or Bang  => 이 nullable value는 nonenullable value를 가질 것이라고 알려줘야 한다 
+  4) required 쓰기 or 초기값 세팅해주기 
+- lazy initialize 
+  1) late는 lazy initialize 인데 선언할 때 메모리에 할당되는 게 아니라 사용이 될 때 비로서야 메모리에 할당이 된다. 
