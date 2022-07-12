@@ -314,3 +314,25 @@
   4) required 쓰기 or 초기값 세팅해주기 
 - lazy initialize 
   1) late는 lazy initialize 인데 선언할 때 메모리에 할당되는 게 아니라 사용이 될 때 비로서야 메모리에 할당이 된다. 
+
+# 날씨 앱 만들기 part 1 
+- Weather app에서 학습할 내용
+  1) Widget lifecycle 
+  2) API
+  3) Exception handling
+  4) Http package
+  5) Jason parsling
+  6) Passing data 
+
+- Widget lifecycle 
+  1) Stateless widget의 생명주기는 매우 간단하고 신경쓸 것은 오직 build method 밖에 없음. 
+  2) Stateful widget은 좀 더 복잡함... setState ... -> 좀 더 긴 생명 주기를 가지고 다양한 lifecycle method를 가진다. 
+     2.1) initState method : state가 최초로 초기화될 때 호출함. 
+     2.2) build method : 위젯을 build해주는 메소드
+     2.3) displose method&deactivate method : stateful widget이 파괴될 때(위젯 트리에서 완전히 제거될 때) 호출됨. 
+          2.3.1) dispose의 경우 페이지 이동할 때 호출하는 경우에 활용 가능함 
+- API: Application Programming Interface 
+  1) 일련의 표준화된 명령이나 기능
+  2) 외부 시스템과 상호작용할 수 있도록 매개 역할자로써의 api 
+  
+  
