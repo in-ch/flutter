@@ -11,6 +11,7 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   // 현재 위치 가져오기
   void getLocation() async {
+    LocationPermission permission = await Geolocator.requestPermission();
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     print('현재 나의 위치');
