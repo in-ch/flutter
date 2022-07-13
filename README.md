@@ -334,5 +334,13 @@
 - API: Application Programming Interface 
   1) 일련의 표준화된 명령이나 기능
   2) 외부 시스템과 상호작용할 수 있도록 매개 역할자로써의 api 
+
+# 날씨 앱 만들기 part 2 
+- 자주 보았던 instance of Class는 대체 뭘까?
+  우리가 http를 통해서 가져오는 데이터는 응답되는 순간 생성되는 자료가 아니라 이미 정형화된 데이터이다.
+  따라서 그래서 이를 위해 우리가 따로 response instance를 생성하는 거고 생성함으로써 다양한 기능을 쓸 수 있다. (body, statusCode 속성 등 ..)
+- JSON vs XML 
+  XML: xXtensible Markup Language  => <key>value</key> .... 등 등 맘대로 태그를 만들어서 쓸 수 있음. 
+  JSON: Javascript Object Notation
   
   
