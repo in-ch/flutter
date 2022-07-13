@@ -4,7 +4,7 @@ import 'dart:convert';
 class Network {
   final String url;
   final String path;
-  final Map<String, String> parameters;
+  final Map<String, Object> parameters;
   Network(this.url, this.path, this.parameters);
 
   Future<dynamic> getJsonData() async {
@@ -14,6 +14,7 @@ class Network {
     if (response.statusCode == 200) {
       String jsonData = response.body;
       var parsingData = jsonDecode(jsonData);
+      print(parsingData);
       return parsingData;
     } else {
       print(response.statusCode);

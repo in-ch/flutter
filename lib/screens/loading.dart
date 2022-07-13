@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/my_location.dart';
+import 'package:flutter_app/screens/weather.dart';
 import 'package:flutter_app/services/network.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Loading extends StatefulWidget {
@@ -11,6 +13,8 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+  final apiKey = dotenv.get('API_KEY');
+
   @override
   void initState() {
     getLocation();
@@ -24,13 +28,20 @@ class _LoadingState extends State<Loading> {
     await myLocation.getMyCurrentLocation();
 
     final parameters = {
-      'q': 'London',
-      'appid': 'b1b15e88fa797225412429c1c50c122a1'
+      'lat': myLocation.latitude2.toString(),
+      'lon': myLocation.longitude2.toString(),
+      'appid': apiKey
     };
 
     Network network =
-        Network('samples.openweathermap.org', 'data/2.5/weather', parameters);
-    print(network.getJsonData());
+        Network('api.openweathermap.org', 'data/2.5/weather', parameters);
+    moveToWeatherScreen(await network.getJsonData());
+  }
+
+  void moveToWeatherScreen(dynamic weatcherData) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return WeatherScreen(parseWeatherData: weatcherData);
+    }));
   }
 
   @override
@@ -38,7 +49,9 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
         body: Center(
       child: OutlinedButton(
-          onPressed: () async {},
+          onPressed: () async {
+            getLocation();
+          },
           child: const Text(
             "Get my location",
             style: TextStyle(color: Colors.amber),

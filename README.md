@@ -342,5 +342,8 @@
 - JSON vs XML 
   XML: xXtensible Markup Language  => <key>value</key> .... 등 등 맘대로 태그를 만들어서 쓸 수 있음. 
   JSON: Javascript Object Notation
-  
+
+# 날씨 앱 만들기 part 3 
+- dotenv 찾아보고 적용했음 
+
   
