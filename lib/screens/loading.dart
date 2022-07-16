@@ -30,17 +30,32 @@ class _LoadingState extends State<Loading> {
     final parameters = {
       'lat': myLocation.latitude2.toString(),
       'lon': myLocation.longitude2.toString(),
+      'appid': apiKey,
+      'units': 'metric',
+    };
+
+    final parameters2 = {
+      'lat': myLocation.latitude2.toString(),
+      'lon': myLocation.longitude2.toString(),
       'appid': apiKey
     };
 
     Network network =
         Network('api.openweathermap.org', 'data/2.5/weather', parameters);
-    moveToWeatherScreen(await network.getJsonData());
+
+    Network network2 = Network(
+        'api.openweathermap.org', 'data/2.5/air_pollution', parameters2);
+
+    moveToWeatherScreen(
+        await network.getJsonData(), await network2.getJsonData());
   }
 
-  void moveToWeatherScreen(dynamic weatcherData) {
+  void moveToWeatherScreen(dynamic weatcherData, dynamic pollutionData) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return WeatherScreen(parseWeatherData: weatcherData);
+      return WeatherScreen(
+        parseWeatherData: weatcherData,
+        parseAirPollution: pollutionData,
+      );
     }));
   }
 
