@@ -345,3 +345,24 @@
 
 # 날씨 앱 만들기 part 3 
 - dotenv 찾아보고 적용했음 
+
+# 날씨 앱 만들기 part 5 
+- What are the keys? 
+  1. 위젯의 State를 보존 -> State란 UI가 변경되도록 영향을 미치는 데이터이다. 
+  2. 위젯이나 요소들을 유니크하게 식별 
+  3. Flutter는 기본적으로 위젯의 타입으로 식별
+  4. Stateful 위젯의 식별을 위해서는 key가 필요
+  5. Value key는 value값을 가지는 Stateful 위젯에 사용 
+
+- Key의 종류 
+  1. Gloal key
+  2. Value key
+  3. Unique key
+  4. Object key
+  5. Page storage key 
+
+- 위젯에도 useKey()를 줘서 각 각 key값을 줄 수 있다. 
+
+- What is the "Global Key?"
+  1. GlobalKey를 사용해서 글로벌 키를 사용할 수 있음. 
+  
